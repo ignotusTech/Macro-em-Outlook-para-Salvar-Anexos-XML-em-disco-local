@@ -2,6 +2,10 @@
 
 Esta macro em VBA foi criada para o Microsoft Outlook. Ela verifica uma pasta selecionada no Outlook e salva os anexos .xml dos emails nessa pasta em uma localização específica no disco local.
 
+## Pré-requisitos
+
+- Microsoft Outlook instalado em seu computador
+
 ## Funcionalidade
 
 - Permite selecionar uma pasta de emails no Outlook.
@@ -30,3 +34,5 @@ Lembre-se de que é importante ter cuidado ao executar macros e scripts em seu c
 ## Contribuição
 
 Se você quiser contribuir para este projeto, fique à vontade para enviar pull requests. Certifique-se de seguir as diretrizes de contribuição.
+
+[![Badge](https://ignotustech.xyz/badge.svg)](https://github.com/ignotusTech)
