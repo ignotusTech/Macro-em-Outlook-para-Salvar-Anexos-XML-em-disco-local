@@ -6,31 +6,31 @@ Sub SalvarAnexosXML()
     Dim objAttachment As Outlook.Attachment
     Dim saveFolder As String
     Dim attachmentFileType As String
-    Dim contTotal As Long ' Vari�vel para contar o n�mero total de emails verificados
-    Dim contXML As Long ' Vari�vel para contar o n�mero de anexos .xml salvos
+    Dim contTotal As Long ' Variável para contar o número total de emails verificados
+    Dim contXML As Long ' Variável para contar o número de anexos .xml salvos
     
-    ' Inicializa as vari�veis de contagem
+    ' Inicializa as variáveis de contagem
     contTotal = 0
     contXML = 0
     
-    ' Defina o caminho da pasta onde os anexos .xml ser�o salvos
+    ' Defina o caminho da pasta onde os anexos .xml serão salvos
     saveFolder = "C:\temp\"
     
     ' Defina o tipo de arquivo para procurar (neste caso, .xml)
     attachmentFileType = ".xml"
     
-    ' Obt�m o explorador do Outlook ativo
+    ' Obtém o explorador do Outlook ativo
     Set objExplorer = Outlook.Application.ActiveExplorer
     
-    ' Verifica se h� um item selecionado no explorador
+    ' Verifica se há um item selecionado no explorador
     If Not objExplorer Is Nothing Then
         If objExplorer.Selection.Count > 0 Then
-            ' Obt�m a pasta do item selecionado
+            ' Obtém a pasta do item selecionado
             Set objFolder = objExplorer.CurrentFolder
         End If
     End If
     
-    ' Se n�o houver uma pasta selecionada, saia da macro
+    ' Se não houver uma pasta selecionada, saia da macro
     If objFolder Is Nothing Then
         MsgBox "Nenhuma pasta selecionada.", vbExclamation
         Exit Sub
@@ -45,7 +45,7 @@ Sub SalvarAnexosXML()
             For Each objAttachment In objItem.Attachments
                 Dim fileExt As String
                 fileExt = Right(objAttachment.FileName, Len(attachmentFileType))
-                ' Verifica se a extens�o do arquivo corresponde (insens�vel a mai�sculas e min�sculas)
+                ' Verifica se a extensão do arquivo corresponde (insensível a maiúsculas e minúsculas)
                 If StrComp(fileExt, attachmentFileType, vbTextCompare) = 0 Then
                     ' Salva o anexo .xml na pasta especificada
                     objAttachment.SaveAsFile saveFolder & objAttachment.FileName
@@ -56,7 +56,7 @@ Sub SalvarAnexosXML()
         End If
     Next objItem
     
-    ' Limpa as vari�veis
+    ' Limpa as variáveis
     Set objAttachment = Nothing
     Set objItem = Nothing
     Set objFolder = Nothing
