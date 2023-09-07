@@ -4,7 +4,12 @@ Esta macro em VBA foi criada para o Microsoft Outlook. Ela verifica uma pasta se
 
 ## Pré-requisitos
 
-- Microsoft Outlook instalado em seu computador
+- Microsoft Outlook instalado em seu computador.
+- A visualização da pasta do outlook que contém os E-Mails não podem estar em grupos e sim apenas os e-mails.
+- Conhecimento básico de VBA pode ser útil para personalizar a macro conforme necessário.
+
+Lembre-se de que é importante ter cuidado ao executar macros e scripts em seu computador. Certifique-se de que o código seja seguro e confiável antes de executá-lo. Se tiver dúvidas ou preocupações, consulte um profissional de TI ou desenvolvedor.
+
 
 ## Funcionalidade
 
@@ -23,13 +28,6 @@ Esta macro em VBA foi criada para o Microsoft Outlook. Ela verifica uma pasta se
 7. Entre na pasta na qual deseja salvar os arquivos '.XML'.
 8. Execute a macro pressionando `Alt + F8`, escolhendo `SalvarAnexosXML` e clicando em "Executar".
 9. A mensagem 'Anexos .xml salvos na pasta `escolhida no item 5`' aparecerá na tela e terminará de executar a macro salvando os arquivos '.XML' no disco local.
-
-## Requisitos
-
-- Microsoft Outlook.
-- Conhecimento básico de VBA pode ser útil para personalizar a macro conforme necessário.
-
-Lembre-se de que é importante ter cuidado ao executar macros e scripts em seu computador. Certifique-se de que o código seja seguro e confiável antes de executá-lo. Se tiver dúvidas ou preocupações, consulte um profissional de TI ou desenvolvedor.
 
 ## Contribuição
 
