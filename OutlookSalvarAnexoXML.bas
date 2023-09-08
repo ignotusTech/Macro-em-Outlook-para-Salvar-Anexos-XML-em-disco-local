@@ -14,7 +14,7 @@ Sub SalvarAnexosXML()
     contXML = 0
     
     ' Defina o caminho da pasta onde os anexos .xml serão salvos
-    saveFolder = "C:\temp\"
+    saveFolder = "c:\temp\"
     
     ' Defina o tipo de arquivo para procurar (neste caso, .xml)
     attachmentFileType = ".xml"
@@ -48,14 +48,25 @@ Sub SalvarAnexosXML()
                 ' Verifica se a extensão do arquivo corresponde (insensível a maiúsculas e minúsculas)
                 If StrComp(fileExt, attachmentFileType, vbTextCompare) = 0 Then
                     ' Salva o anexo .xml na pasta especificada
+                    On Error Resume Next
                     objAttachment.SaveAsFile saveFolder & objAttachment.FileName
-                    ' Incrementa o contador de anexos .xml salvos
-                    contXML = contXML + 1
+                    On Error GoTo 0 ' Desativa o tratamento de erros
+                    ' Verifica se houve um erro ao salvar o anexo
+                    ' Verifique se ocorreu um erro ao salvar o anexo
+                    If Err.Number <> 0 Then
+                        ' Registre o erro em algum lugar, como no Immediate Window (janela imediata)
+                        Debug.Print "Erro ao salvar o anexo: " & Err.Description
+                        Err.Clear ' Limpe o objeto de erro
+                    Else
+                        ' Incrementa o contador de anexos .xml salvos
+                        contXML = contXML + 1
+                    End If
                 End If
             Next objAttachment
         End If
     Next objItem
     
+
     ' Limpa as variáveis
     Set objAttachment = Nothing
     Set objItem = Nothing
